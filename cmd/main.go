@@ -1,36 +1,31 @@
 package main
 
 import (
-	"context"
-	"fmt"
-	"os/signal"
-	"syscall"
-
 	"github.com/Reddetk/crawler-cli/cmd/config"
 	"github.com/Reddetk/crawler-cli/cmd/logger"
 )
 
-// type app struct{}
 
 func main() {
-	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
-	defer stop()
+	cnf, cnfErrors := configurateApp()
 
-	logCnf := config.InitLoggerConfig()
-	cnf := config.InitConfig(logCnf)
+	log, err := logger.NewZapLogger(*cnf.LogCnf)
+	if err != nil {
+		panic(err)
+	}
 
-	runApp(ctx, cnf)
+	if cnfErrors != nil {
+		log.Warn("configuration errors:", logger.Error(cnfErrors))
+	}
 
-	<-signalChan
-
-	fmt.Println("Received termination signal, shutting down...")
 }
 
-func runApp(ctx context.Context, cnf config.Config) {
-	// logger initialization
-	log, err := logger.NewZapLogger(cnf.LogCnf)
+
+func configurateApp()(*config.Config, error){
+	cnf, err := config.InitDefaultConfig()
 	if err != nil {
-		panic("logger init error")
+		panic(err)
 	}
-	log.Info("Hi")
+	cnf, err  = cnf.ParseAppConfigFlags()
+	return cnf, err
 }

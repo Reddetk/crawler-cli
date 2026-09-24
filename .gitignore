@@ -1,2 +1,6 @@
 .env
 .env.prod
+
+*.log
+
+resources/

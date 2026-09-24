@@ -34,8 +34,6 @@ func (z *zapLogger) With(fields ...Field) Logger {
 
 // NewZapLogger implement Logger with logger config
 func NewZapLogger(logCnf config.LoggerConfig) (Logger, error) {
-	zap.NewDevelopmentConfig()
-
 	cfg := zap.Config{
 		Level:       zap.NewAtomicLevelAt(zap.DebugLevel),
 		Development: true,
@@ -47,7 +45,7 @@ func NewZapLogger(logCnf config.LoggerConfig) (Logger, error) {
 			MessageKey:     "msg",
 			StacktraceKey:  "crawler",
 			EncodeTime:     zapcore.TimeEncoderOfLayout("15:04:05"),
-			EncodeLevel:    zapcore.CapitalColorLevelEncoder,
+			EncodeLevel:    zapcore.CapitalLevelEncoder,
 			EncodeCaller:   zapcore.ShortCallerEncoder,
 			EncodeDuration: zapcore.StringDurationEncoder,
 		},
