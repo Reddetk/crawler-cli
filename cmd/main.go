@@ -9,7 +9,7 @@ import (
 func main() {
 	cli := primadapter.NewCLI()
 
-	appCnf, srvCnf, warn := cli.ParseFlags(initConfigs())
+	appCnf, _, warn := cli.ParseFlags(initConfigs()) // TODO _
 	log, err := logger.NewZapLogger(*appCnf.LogCnf)
 	if err != nil {
 		panic("error of logger init")
@@ -17,8 +17,6 @@ func main() {
 	if warn != nil {
 		log.Warn("configuration warning:", logger.Error(warn))
 	}
-
-	primadapter.NewSeedProduser(l)
 }
 
 func initConfigs() (*config.AppConfig, *config.ServiceConfig) {

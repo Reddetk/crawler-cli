@@ -9,7 +9,6 @@ import (
 	"io"
 	"os"
 	"strings"
-	"sync"
 
 	"github.com/Reddetk/crawler-cli/cmd/config"
 	primports "github.com/Reddetk/crawler-cli/internal/ports/primPorts"
@@ -42,7 +41,10 @@ func (cli *CLI) StartSeedProdusing(ctx context.Context) error {
 		return fmt.Errorf("seed producer not initialized")
 	}
 
-	cli.seedprod.processRequests(ctx, cli.urls)
+	err := cli.seedprod.WebParser.StartCrawl(ctx, cli.urls)
+	if err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -98,18 +100,6 @@ func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) 
 
 	errs = append(errs, err)
 	return cnf, srvCnf, errors.Join(errs...)
-}
-
-func (sP *SeedProduser) processRequests(rootCtx context.Context, urls []string) {
-	var wg sync.WaitGroup
-	for _, url := range urls {
-		wg.Add(1)
-		go func(u string) {
-			defer wg.Done()
-			sP.WebParser.ProcessRequest(rootCtx, u)
-		}(url)
-	}
-	wg.Wait()
 }
 
 // helper

@@ -4,5 +4,5 @@ package primports
 import "context"
 
 type WebParser interface {
-	ProcessRequest(ctx context.Context, URL string) error
+	StartCrawl(ctx context.Context, urls []string) error
 }
