@@ -13,7 +13,6 @@ import (
 
 const (
 	defaultMaxWorkers int = 5
-	defaultDepth int = 3
 	defaultAppTimeout time.Duration = time.Minute*2
 	defaultResultPath string = "resources/result.json"
 	defaultOutputPaths      string = "resources/crawler.log"
@@ -26,7 +25,6 @@ const (
 
 type Config struct {
 	AppTimeout time.Duration
-	Depth int
 	ResultPath string
 	AppEnvs appEnvs 
 	LogCnf *LoggerConfig
@@ -44,7 +42,6 @@ type LoggerConfig struct {
 func InitDefaultConfig() (*Config, error) {
 	return &Config{
 		AppEnvs: parseEnv(),
-		Depth: defaultDepth,
 		ResultPath: defaultResultPath,
 		AppTimeout: defaultAppTimeout,
 		LogCnf: initDefaultLoggerConfig(),
@@ -67,7 +64,6 @@ func (cnf *Config) ParseAppConfigFlags() (*Config, error) {
 	fs.SetOutput(io.Discard) // подавить автоматический usage-вывод в stderr
 
 
-	depth := fs.Int("depth", cnf.Depth, "crawl depth")
 	timeout := fs.Duration("timeout", cnf.AppTimeout,
 		"overall timeout for the whole crawl run, e.g. 2m, 90s, 1h30m. Format: Go time.Duration")
 	output := fs.String("output", cnf.ResultPath, "result output path")
@@ -78,7 +74,6 @@ func (cnf *Config) ParseAppConfigFlags() (*Config, error) {
 		return cnf, err
 	}
 
-	cnf.Depth = *depth
 	cnf.AppTimeout = *timeout
 
 	var errs []error
