@@ -3,29 +3,26 @@ package main
 import (
 	"github.com/Reddetk/crawler-cli/cmd/config"
 	"github.com/Reddetk/crawler-cli/cmd/logger"
+	primadapter "github.com/Reddetk/crawler-cli/internal/adapters/primAdapter"
 )
 
-
 func main() {
-	cnf, cnfErrors := configurateApp()
+	cli := primadapter.NewCLI()
 
-	log, err := logger.NewZapLogger(*cnf.LogCnf)
+	appCnf, srvCnf, warn := cli.ParseFlags(initConfigs())
+	log, err := logger.NewZapLogger(*appCnf.LogCnf)
 	if err != nil {
-		panic(err)
+		panic("error of logger init")
+	}
+	if warn != nil {
+		log.Warn("configuration warning:", logger.Error(warn))
 	}
 
-	if cnfErrors != nil {
-		log.Warn("configuration errors:", logger.Error(cnfErrors))
-	}
-
+	primadapter.NewSeedProduser(l)
 }
 
-
-func configurateApp()(*config.Config, error){
-	cnf, err := config.InitDefaultConfig()
-	if err != nil {
-		panic(err)
-	}
-	cnf, err  = cnf.ParseAppConfigFlags()
-	return cnf, err
+func initConfigs() (*config.AppConfig, *config.ServiceConfig) {
+	appcnf := config.InitDefaultAppConfig()
+	srvcnf := config.InitDefaultServiceConfig()
+	return appcnf, srvcnf
 }

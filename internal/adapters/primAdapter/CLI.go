@@ -1,74 +1,115 @@
-// Package primadapter stay for CLI interaction model
+// Package primadapter stay for SeedProduser interaction model
 package primadapter
 
 import (
 	"context"
+	"errors"
 	"flag"
 	"fmt"
 	"io"
 	"os"
 	"strings"
-	"time"
+	"sync"
 
-	"github.com/Reddetk/crawler-cli/cmd/logger"
+	"github.com/Reddetk/crawler-cli/cmd/config"
 	primports "github.com/Reddetk/crawler-cli/internal/ports/primPorts"
 )
 
-const (
-	defaultRequepstTimeout time.Duration = time.Minute
-	defaultDepth           int           = 3
-)
+type SeedProduser struct {
+	WebParser primports.WebParser
+}
 
 type CLI struct {
-	log                 logger.Logger
-	WebParser           primports.WebParser
-	ServiceConfigurator primports.ServiceConfigurator
+	urls     []string
+	seedprod *SeedProduser
 }
 
-func NewCLI(webParser primports.WebParser, serviceConfigurator primports.ServiceConfigurator, log logger.Logger) *CLI {
-	return &CLI{
-		log:                 log,
-		WebParser:           webParser,
-		ServiceConfigurator: serviceConfigurator,
+func NewSeedProduser(webparse primports.WebParser) *SeedProduser {
+	return &SeedProduser{
+		WebParser: webparse,
 	}
 }
 
-func (cli *CLI) ParseConsoleInput() {
+func NewCLI() *CLI {
+	return &CLI{}
 }
 
-func (cli *CLI) parseServiceConfigFlags() (int, time.Duration, error) {
-	fs := flag.NewFlagSet("service-configs", flag.ContinueOnError)
+func (cli *CLI) StartSeedProdusing(ctx context.Context) error {
+	if cli.urls == nil {
+		return fmt.Errorf("urls is empty")
+	}
+	if cli.seedprod == nil {
+		return fmt.Errorf("seed producer not initialized")
+	}
+
+	cli.seedprod.processRequests(ctx, cli.urls)
+	return nil
+}
+
+// ParseFlags get flags
+// If val for config doesn't set, leave default
+func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) (*config.AppConfig, *config.ServiceConfig, error) {
+	fs := flag.NewFlagSet("crawler", flag.ContinueOnError)
 	fs.SetOutput(io.Discard) // подавить автоматический usage-вывод в stderr
 
-	reqTimeout := flag.Duration("request-timeout", defaultRequepstTimeout, "Timeout for a single HTTP request, e.g. 10s, 500ms. Format: Go time.Duration")
-	depth := flag.Int("depth", defaultDepth, "Maximum link-following depth from each start URL (0 = only the start URL itself)")
+	var errs []error
+
+	// App Configs
+	timeout := fs.Duration("timeout", cnf.AppTimeout,
+		"overall timeout for the whole crawl run, e.g. 2m, 90s, 1h30m. Format: Go time.Duration")
+	output := fs.String("output", cnf.ResultPath, "result output path")
+	logPath := fs.String("log", "", "additional logger output path")
+
+	cnf.AppTimeout = *timeout
+
+	if err := validatePath(*output); err != nil {
+		errs = append(errs, fmt.Errorf("output: %w", err))
+	} else {
+		cnf.ResultPath = *output
+	}
+
+	if *logPath != "" {
+		if err := validatePath(*logPath); err != nil {
+			errs = append(errs, fmt.Errorf("log: %w", err))
+		} else {
+			cnf.LogCnf.WithOutputPath(*logPath)
+		}
+	}
+
+	// Service configs
+
+	reqTimeout := fs.Duration("request-timeout", srvCnf.RequestTimeout, "Timeout for a single HTTP request, e.g. 10s, 500ms. Format: Go time.Duration")
+	depth := fs.Int("depth", srvCnf.Depth, "Maximum link-following depth from each start URL (0 = only the start URL itself)")
+
+	srvCnf.RequestTimeout = *reqTimeout
+	srvCnf.Depth = *depth
+
+	// Playload
+
+	urlsStr := fs.String("urls", "", "Comma-separated list of start URLs. Crawling for each URL is restricted to its own domain")
+	urls, err := parseUrls(*urlsStr)
+
+	cli.urls = urls
 
 	if err := fs.Parse(os.Args[1:]); err != nil {
 		err := fmt.Errorf("failed to parse flags %w", err)
-		return defaultDepth, defaultRequepstTimeout, err
+		return cnf, srvCnf, err
 	}
 
-	return *depth, *reqTimeout, nil
+	errs = append(errs, err)
+	return cnf, srvCnf, errors.Join(errs...)
 }
 
-func (cli *CLI) getPlayload() ([]string, error) {
-	fs := flag.NewFlagSet("playload", flag.ContinueOnError)
-	fs.SetOutput(io.Discard) // подавить автоматический usage-вывод в stderr
-
-	urls := flag.String("urls", "", "Comma-separated list of start URLs. Crawling for each URL is restricted to its own domain")
-
-	if err := fs.Parse(os.Args[1:]); err != nil {
-		err := fmt.Errorf("failed to parse flags %w", err)
-		return nil, err
-	}
-
-	return parseUrls(*urls)
-}
-
-func (cli *CLI) processRequests(rootCtx context.Context, urls []string) {
+func (sP *SeedProduser) processRequests(rootCtx context.Context, urls []string) {
+	var wg sync.WaitGroup
 	for _, url := range urls {
-		go cli.WebParser.ProcessRequest(rootCtx, url)
+		wg.Add(1)
+		go func(u string) {
+			defer wg.Done()
+			sP.WebParser.ProcessRequest(rootCtx, u)
+		}(url)
 	}
+	wg.Wait()
 }
 
 // helper
@@ -78,4 +119,16 @@ func parseUrls(url string) ([]string, error) {
 		return nil, fmt.Errorf("no url parsed")
 	}
 	return urls, nil
+}
+
+// helpers
+func validatePath(path string) error {
+	_, err := os.Stat(path)
+	if err != nil {
+		if os.IsNotExist(err) {
+			return fmt.Errorf("path does not exist: %s", path)
+		}
+		return fmt.Errorf("cannot stat path %s: %w", path, err)
+	}
+	return nil
 }
