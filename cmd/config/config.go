@@ -27,17 +27,17 @@ const (
 type AppConfig struct {
 	AppTimeout time.Duration
 	ResultPath string
-	AppEnvs    appEnvs
 	LogCnf     *LoggerConfig
 }
 
 type ServiceConfig struct {
 	RequestTimeout time.Duration
+	AppEnvs        envs
 	Depth          int
 }
 
-type appEnvs struct {
-	maxWorkers int
+type envs struct {
+	MaxWorkers int
 }
 
 type LoggerConfig struct {
@@ -47,7 +47,6 @@ type LoggerConfig struct {
 
 func InitDefaultAppConfig() *AppConfig {
 	return &AppConfig{
-		AppEnvs:    parseEnv(),
 		ResultPath: defaultResultPath,
 		AppTimeout: defaultAppTimeout,
 		LogCnf:     initDefaultLoggerConfig(),
@@ -56,6 +55,7 @@ func InitDefaultAppConfig() *AppConfig {
 
 func InitDefaultServiceConfig() *ServiceConfig {
 	return &ServiceConfig{
+		AppEnvs:        parseEnv(),
 		RequestTimeout: DefaultRequepstTimeout,
 		Depth:          DefaultDepth,
 	}
@@ -80,9 +80,9 @@ func (lCnf *LoggerConfig) WithErrOutputPath(paths ...string) *LoggerConfig {
 	return lCnf
 }
 
-func parseEnv() appEnvs {
-	return appEnvs{
-		maxWorkers: getMaxWorkers(),
+func parseEnv() envs {
+	return envs{
+		MaxWorkers: getMaxWorkers(),
 	}
 }
 
