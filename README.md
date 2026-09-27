@@ -35,7 +35,7 @@ go build -o crawler-cli.exe ./cmd
 | `--timeout` | `2m` | Whole-run timeout |
 | `--request-timeout` | `1m` | Timeout for one HTTP request |
 | `--output` | `resources/result.json` | Result file |
-| `--log` | — | Additional Zap output path |
+| `--log` | `resources/crawler.log` | Additional Zap output path |
 | `MAXWORKERS` | `5` | Concurrent observations; use `1`–`10` |
 
 ## Runtime behavior
