@@ -1,26 +1,42 @@
 package main
 
 import (
+	"context"
+	"fmt"
+	"os"
+	"os/signal"
+	"syscall"
+
 	"github.com/Reddetk/crawler-cli/cmd/config"
 	"github.com/Reddetk/crawler-cli/cmd/logger"
 	primadapter "github.com/Reddetk/crawler-cli/internal/adapters/primAdapter"
+	secadapter "github.com/Reddetk/crawler-cli/internal/adapters/secAdapter"
+	"github.com/Reddetk/crawler-cli/internal/core"
 )
 
 func main() {
-	cli := primadapter.NewCLI()
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
 
-	appCnf, _, warn := cli.ParseFlags(initConfigs()) // TODO _
+	cli := primadapter.NewCLI()
+	appCnf, srvCnf, warn := cli.ParseFlags(initConfigs())
+	if warn != nil {
+		fmt.Fprintln(os.Stderr, warn)
+		os.Exit(2)
+	}
+
 	log, err := logger.NewZapLogger(*appCnf.LogCnf)
 	if err != nil {
-		panic("error of logger init")
+		fmt.Fprintln(os.Stderr, "logger init:", err)
+		os.Exit(1)
 	}
-	if warn != nil {
-		log.Warn("configuration warning:", logger.Error(warn))
-	}
+
+	crawler := core.NewCrawlerService(srvCnf, secadapter.NewHTTPObserver(log), log)
+	cli.Bind(crawler, appCnf, log)
+
+	os.Exit(cli.Run(ctx).ExitCode())
 }
 
 func initConfigs() (*config.AppConfig, *config.ServiceConfig) {
-	appcnf := config.InitDefaultAppConfig()
-	srvcnf := config.InitDefaultServiceConfig()
-	return appcnf, srvcnf
+	return config.InitDefaultAppConfig(), config.InitDefaultServiceConfig()
 }
