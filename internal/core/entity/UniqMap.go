@@ -1,31 +1,26 @@
 package entity
 
-import (
-	"sync"
-)
+import "sync"
 
-// UniqMap tracks visited URLs
+// UniqMap tracks visited urls
 type UniqMap struct {
 	mu       sync.Mutex
-	observed map[string]bool
+	observed map[string]struct{}
 }
 
+// NewUniqMap creates an empty visited-urls map
 func NewUniqMap() *UniqMap {
-	return &UniqMap{
-		observed: make(map[string]bool),
-	}
+	return &UniqMap{observed: make(map[string]struct{})}
 }
 
-// TryVisit atomically checks whether the URL was already visited and,
-// if not, marks it as visited.
+// TryVisit atomically reports whether the url is new and marks it visited
 func (um *UniqMap) TryVisit(url string) bool {
 	um.mu.Lock()
 	defer um.mu.Unlock()
 
-	if um.observed[url] {
+	if _, ok := um.observed[url]; ok {
 		return false
 	}
-
-	um.observed[url] = true
+	um.observed[url] = struct{}{}
 	return true
 }

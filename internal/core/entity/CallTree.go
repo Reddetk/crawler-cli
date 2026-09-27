@@ -1,30 +1,29 @@
 package entity
 
-import (
-	"net/url"
-)
+import "net/url"
 
+// CallTree is an aggregate of one start URL: root page, host border and visited urls
 type CallTree struct {
-	Root  *Page
-	Host  string
-	Um    *UniqMap
-	Error error
+	Root    *Page
+	Host    string
+	Visited *UniqMap
 }
 
-func NewCallTree(root *Page) (*CallTree, error) {
-	hostURL, err := url.Parse(root.Resource)
+// NewCallTree builds a tree from the start URL
+func NewCallTree(startURL string) (*CallTree, error) {
+	u, err := url.Parse(startURL)
 	if err != nil {
 		return nil, err
 	}
-	um := NewUniqMap()
 	return &CallTree{
-		Root: root,
-		Host: hostURL.Host,
-		Um:   um,
+		Root:    BlankPage(startURL),
+		Host:    u.Host,
+		Visited: NewUniqMap(),
 	}, nil
 }
 
-
-func(ct *CallTree) ConnectBranch(parentPage *Page){
-	
+// Allows reports whether the URL belongs to the tree host
+func (ct *CallTree) Allows(rawURL string) bool {
+	u, err := url.Parse(rawURL)
+	return err == nil && u.Host == ct.Host
 }

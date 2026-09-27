@@ -1,10 +1,8 @@
-// Package core implement core business logic CrawlerService
+// Package core implements the crawler business logic.
 package core
 
 import (
 	"context"
-	"fmt"
-	"net/url"
 	"sync"
 
 	"github.com/Reddetk/crawler-cli/cmd/config"
@@ -13,15 +11,16 @@ import (
 	secports "github.com/Reddetk/crawler-cli/internal/ports/secPorts"
 )
 
+// CrawlerService orchestrates concurrent crawl trees over the web observer
 type CrawlerService struct {
 	cnf         *config.ServiceConfig
 	webObserver secports.WebObserver
-	od          ObserveDispatcher
+	dsp         *ObserveDispatcher
 	log         logger.Logger
-	callTrees   []*entity.CallTree
-	mu          sync.Mutex
+	trees       []*entity.CallTree
 }
 
+// NewCrawlerService creates a service with the bounded observer dispatcher
 func NewCrawlerService(
 	cnf *config.ServiceConfig,
 	webObserver secports.WebObserver,
@@ -30,129 +29,90 @@ func NewCrawlerService(
 	return &CrawlerService{
 		cnf:         cnf,
 		webObserver: webObserver,
+		dsp:         NewObserveDispatcher(cnf.AppEnvs.MaxWorkers),
 		log:         log,
 	}
 }
 
-type ObserveDispatcher struct {
-	sym chan any
-	wg  *sync.WaitGroup
-}
+// StartCrawl expands one call tree per start URL in parallel
+func (cs *CrawlerService) StartCrawl(ctx context.Context, urls []string) ([]*entity.Page, error) {
+	var wg sync.WaitGroup
 
-func (cs *CrawlerService) newObserveDispatcher() *ObserveDispatcher {
-	sym := make(chan any, cs.cnf.AppEnvs.MaxWorkers)
-	wg := new(sync.WaitGroup)
-	wg.Wait()
-	return &ObserveDispatcher{
-		sym: sym,
-		wg:  wg,
+	for _, u := range urls {
+		tree, err := entity.NewCallTree(u)
+		if err != nil {
+			cs.log.Error("build call tree", logger.String("url", u), logger.Error(err))
+			continue
+		}
+		if !tree.Visited.TryVisit(u) {
+			continue
+		}
+		cs.trees = append(cs.trees, tree)
+
+		wg.Add(1)
+		go cs.appendTree(ctx, tree, tree.Root, 0, &wg)
 	}
-}
 
-type Call struct {
-	pg   *entity.Page
-	dep  int
-	host string
-}
-
-func NewRootCall(rturl string) (*Call, error) {
-	rtBlancPage := entity.FormBlancPage(rturl)
-	url, err := url.Parse(rturl)
-	if err != nil {
+	wg.Wait()
+	if err := ctx.Err(); err != nil {
 		return nil, err
 	}
-	host := url.Host
-	return &Call{
-		pg:   rtBlancPage,
-		dep:  0,
-		host: host,
-	}, nil
+
+	pages := make([]*entity.Page, 0, len(cs.trees))
+	for _, t := range cs.trees {
+		if !t.Root.Alive() {
+			continue
+		}
+		t.Root.Prune()
+		pages = append(pages, t.Root)
+	}
+	return pages, nil
 }
 
-func (Call *Call) isHost() (bool, error) {
-	url, err := url.Parse(Call.pg.Resource)
+// appendTree expands the page node inside the tree with fork-join
+func (cs *CrawlerService) appendTree(ctx context.Context, tree *entity.CallTree, page *entity.Page, depth int, wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	if err := cs.dsp.Acquire(ctx); err != nil {
+		return
+	}
+	defer cs.dsp.Release()
+
+	links, err := cs.observe(ctx, page)
 	if err != nil {
-		return false, err
+		return
 	}
-	if url.Host != Call.pg.Resource {
-		return false, nil
+	if depth >= cs.cnf.Depth {
+		return
 	}
-	return true, nil
+
+	for _, link := range links {
+		if !tree.Allows(link) || !tree.Visited.TryVisit(link) {
+			continue
+		}
+		child := entity.BlankPage(link)
+		page.Adopt(child)
+
+		wg.Add(1)
+		go cs.appendTree(ctx, tree, child, depth+1, wg)
+	}
 }
 
-func (motherCall *Call) Child(childPg *entity.Page) *Call {
-	return &Call{
-		pg:   childPg,
-		dep:  motherCall.dep + 1,
-		host: motherCall.host,
-	}
-}
+// observe explores the page through the secondary port
+func (cs *CrawlerService) observe(ctx context.Context, page *entity.Page) ([]string, error) {
+	ctxReq, cancel := context.WithTimeout(ctx, cs.cnf.RequestTimeout)
+	defer cancel()
 
-func (cs *CrawlerService) AppendToTree(ctx context.Context, caltree *entity.CallTree, curCall Call) (*Call, error) {
-	obsRes, err := cs.webObserver.Observe(ctx, curCall.pg.Resource)
+	res, err := cs.webObserver.Observe(ctxReq, page.Resource)
 	if err != nil {
-		return &curCall, fmt.Errorf("internal error: %w", err)
+		if ctx.Err() != nil {
+			return nil, ctx.Err()
+		}
+		cs.log.Warn("observe failed", logger.String("url", page.Resource), logger.Error(err))
+		page.Fail()
+		return nil, nil
 	}
-	urls := curCall.pg.Explore(*obsRes)
 
-	// stopers
-	if curCall.dep >= cs.cnf.Depth {
-		return &curCall, nil
-	}
-
-	for _, url := range urls {
-
-		childPg := entity.FormBlancPage(url)
-		curCall.pg.Adopt(childPg)
-		if !caltree.Um.TryVisit(url) {
-			return &curCall, nil
-		}
-
-		childCall := curCall.Child(childPg)
-		ishst, err := childCall.isHost()
-		if err != nil {
-			return &curCall, fmt.Errorf("host definition error: %w", err)
-		} else if !ishst {
-			return &curCall, nil
-		}
-		cs.od.sym <- struct{}{}
-		cs.od.wg.Add(1)
-
-		go func() (*Call, error) {
-			return cs.AppendToTree(ctx, caltree, *childCall)
-		}()
-
-		defer cs.od.wg.Done()
-		<-cs.od.sym
-	}
-	return nil, nil
-}
-
-// StartCrawl обходит деревья всех стартовых URL параллельно.
-
-func (cs *CrawlerService) StartCrawl(ctx context.Context, urls []string) ([]*entity.Page, error) {
-	for _, url := range urls {
-		rootCall, err := NewRootCall(url)
-		if err != nil {
-			cs.log.Error("new Call tree error: ", logger.Error(err))
-			continue
-		}
-		caltree, err := entity.NewCallTree(rootCall.pg)
-		if err != nil {
-			cs.log.Error("new Call tree error: ", logger.Error(err))
-			continue
-		}
-		cs.AddCallTree(caltree)
-		_, err = cs.AppendToTree(ctx, caltree, *rootCall)
-		if err != nil {
-			cs.log.Error("new Call tree error: ", logger.Error(err))
-			continue
-		}
-	}
-}
-
-func (cs *CrawlerService) AddCallTree(calltree *entity.CallTree) {
-	cs.mu.Lock()
-	defer cs.mu.Unlock()
-	cs.callTrees = append(cs.callTrees, calltree)
+	page.Title = res.Title
+	return res.Links, nil
 }
