@@ -3,6 +3,7 @@ package primadapter
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -12,9 +13,32 @@ import (
 	"strings"
 
 	"github.com/Reddetk/crawler-cli/cmd/config"
+	"github.com/Reddetk/crawler-cli/cmd/logger"
 	"github.com/Reddetk/crawler-cli/internal/core/entity"
 	primports "github.com/Reddetk/crawler-cli/internal/ports/primPorts"
 )
+
+// Outcome reports how the crawl run finished.
+type Outcome int
+
+const (
+	OutcomeSuccess Outcome = iota
+	OutcomeInterrupted
+	OutcomeTimeout
+	OutcomeFailed
+)
+
+// ExitCode returns the process exit code for the outcome.
+func (o Outcome) ExitCode() int {
+	switch o {
+	case OutcomeSuccess:
+		return 0
+	case OutcomeInterrupted:
+		return 130
+	default:
+		return 1
+	}
+}
 
 type SeedProducer struct {
 	WebParser primports.WebParser
@@ -24,15 +48,35 @@ type SeedProducer struct {
 type CLI struct {
 	urls     []string
 	seedprod *SeedProducer
+	log      logger.Logger
 }
 
 func NewCLI() *CLI {
 	return &CLI{}
 }
 
-// Bind attaches the web parser and app config to the CLI.
-func (cli *CLI) Bind(p primports.WebParser, appCnf *config.AppConfig) {
+// Bind attaches the web parser, app config and logger to the CLI.
+func (cli *CLI) Bind(p primports.WebParser, appCnf *config.AppConfig, log logger.Logger) {
 	cli.seedprod = &SeedProducer{WebParser: p, appCnf: appCnf}
+	cli.log = log
+}
+
+// Run executes the crawl, persists the result and reports the outcome.
+func (cli *CLI) Run(ctx context.Context) Outcome {
+	if cli.seedprod == nil {
+		return OutcomeFailed
+	}
+
+	pages, err := cli.StartSeedProdusing(ctx)
+
+	if werr := persist(cli.seedprod.appCnf.ResultPath, pages); werr != nil {
+		cli.log.Error("write result failed", logger.Error(werr))
+		return OutcomeFailed
+	}
+
+	outcome := classify(err)
+	cli.report(outcome, err)
+	return outcome
 }
 
 // StartSeedProdusing runs the crawl bounded by the overall app timeout.
@@ -110,4 +154,48 @@ func validatePath(path string) error {
 		return fmt.Errorf("output directory does not exist: %s", dir)
 	}
 	return nil
+}
+
+func classify(err error) Outcome {
+	switch {
+	case err == nil:
+		return OutcomeSuccess
+	case errors.Is(err, context.Canceled):
+		return OutcomeInterrupted
+	case errors.Is(err, context.DeadlineExceeded):
+		return OutcomeTimeout
+	default:
+		return OutcomeFailed
+	}
+}
+
+func (cli *CLI) report(outcome Outcome, err error) {
+	path := cli.seedprod.appCnf.ResultPath
+	switch outcome {
+	case OutcomeSuccess:
+		fmt.Fprintf(os.Stderr, "result saved to %s\n", path)
+	case OutcomeInterrupted:
+		cli.log.Info("crawl interrupted", logger.Error(err))
+		fmt.Fprintln(os.Stderr, "interrupted: partial result saved to", path)
+	case OutcomeTimeout:
+		cli.log.Error("crawl failed", logger.Error(err))
+		fmt.Fprintln(os.Stderr, "crawl timed out: partial result saved to", path)
+	default:
+		cli.log.Error("crawl failed", logger.Error(err))
+		fmt.Fprintln(os.Stderr, "crawl failed: see log for details")
+	}
+}
+
+func persist(path string, pages []*entity.Page) error {
+	if pages == nil {
+		pages = []*entity.Page{}
+	}
+	data, err := json.MarshalIndent(pages, "", "  ")
+	if err != nil {
+		return err
+	}
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
+	return os.WriteFile(path, data, 0o644)
 }
