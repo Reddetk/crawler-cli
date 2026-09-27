@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"strings"
 
 	"golang.org/x/net/html"
@@ -57,7 +58,13 @@ func (o *HTTPObserver) Observe(ctx context.Context, url string) (*secports.Obser
 		return nil, fmt.Errorf("charset: %w", err)
 	}
 
-	return parseHTML(r)
+	res, err := parseHTML(r)
+	if err != nil {
+		return nil, err
+	}
+
+	res.Links = resolveLinks(url, res.Links)
+	return res, nil
 }
 
 func parseHTML(r io.Reader) (*secports.ObserveResults, error) {
@@ -89,4 +96,27 @@ func parseHTML(r io.Reader) (*secports.ObserveResults, error) {
 	}
 	walk(doc)
 	return res, nil
+}
+
+// Helpers
+
+// resolveLinks turns relative hrefs into absolute urls against the page address
+func resolveLinks(base string, hrefs []string) []string {
+	b, err := url.Parse(base)
+	if err != nil {
+		return hrefs
+	}
+
+	links := make([]string, 0, len(hrefs))
+	for _, href := range hrefs {
+		ref, err := url.Parse(href)
+		if err != nil {
+			continue
+		}
+		resolved := b.ResolveReference(ref)
+		resolved.Fragment = ""
+		resolved.RawFragment = ""
+		links = append(links, resolved.String())
+	}
+	return links
 }
