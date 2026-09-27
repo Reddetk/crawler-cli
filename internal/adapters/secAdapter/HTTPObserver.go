@@ -1,3 +1,4 @@
+// Package secadapter stays for HTTP observe functional
 package secadapter
 
 import (

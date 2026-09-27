@@ -54,9 +54,6 @@ func (cs *CrawlerService) StartCrawl(ctx context.Context, urls []string) ([]*ent
 	}
 
 	wg.Wait()
-	if err := ctx.Err(); err != nil {
-		return nil, err
-	}
 
 	pages := make([]*entity.Page, 0, len(cs.trees))
 	for _, t := range cs.trees {

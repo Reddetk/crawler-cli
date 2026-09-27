@@ -18,7 +18,7 @@ import (
 	primports "github.com/Reddetk/crawler-cli/internal/ports/primPorts"
 )
 
-// Outcome reports how the crawl run finished.
+// Outcome reports how the crawl run finished
 type Outcome int
 
 const (
@@ -28,7 +28,7 @@ const (
 	OutcomeFailed
 )
 
-// ExitCode returns the process exit code for the outcome.
+// ExitCode returns the process exit code for the outcome
 func (o Outcome) ExitCode() int {
 	switch o {
 	case OutcomeSuccess:
@@ -55,13 +55,13 @@ func NewCLI() *CLI {
 	return &CLI{}
 }
 
-// Bind attaches the web parser, app config and logger to the CLI.
+// Bind attaches the web parser, app config and logger to the CLI
 func (cli *CLI) Bind(p primports.WebParser, appCnf *config.AppConfig, log logger.Logger) {
 	cli.seedprod = &SeedProducer{WebParser: p, appCnf: appCnf}
 	cli.log = log
 }
 
-// Run executes the crawl, persists the result and reports the outcome.
+// Run executes the crawl, persists the result and reports the outcome
 func (cli *CLI) Run(ctx context.Context) Outcome {
 	if cli.seedprod == nil {
 		return OutcomeFailed
@@ -79,7 +79,7 @@ func (cli *CLI) Run(ctx context.Context) Outcome {
 	return outcome
 }
 
-// StartSeedProdusing runs the crawl bounded by the overall app timeout.
+// StartSeedProdusing runs the crawl bounded by the overall app timeout
 func (cli *CLI) StartSeedProdusing(ctx context.Context) ([]*entity.Page, error) {
 	if len(cli.urls) == 0 {
 		return nil, fmt.Errorf("urls is empty")
@@ -94,7 +94,7 @@ func (cli *CLI) StartSeedProdusing(ctx context.Context) ([]*entity.Page, error) 
 	return cli.seedprod.WebParser.StartCrawl(ctx, cli.urls)
 }
 
-// ParseFlags fills configs and payload from console flags.
+// ParseFlags fills configs and payload from console flags
 func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) (*config.AppConfig, *config.ServiceConfig, error) {
 	fs := flag.NewFlagSet("crawler", flag.ContinueOnError)
 	fs.SetOutput(io.Discard)
