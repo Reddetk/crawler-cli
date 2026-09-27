@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"errors"
+	"fmt"
 	"os"
 	"os/signal"
 	"path/filepath"
@@ -35,15 +37,24 @@ func main() {
 	cli.Bind(crawler, appCnf)
 
 	pages, err := cli.StartSeedProdusing(ctx)
+	if len(pages) > 0 {
+		if werr := writeResult(appCnf.ResultPath, pages); werr != nil {
+			log.Error("write result failed", logger.Error(werr))
+			os.Exit(1)
+		}
+	}
+
 	if err != nil {
+		if errors.Is(err, context.Canceled) {
+			fmt.Fprintln(os.Stderr, "interrupted: partial result saved to", appCnf.ResultPath)
+			os.Exit(130)
+		}
+		fmt.Fprintln(os.Stderr, "crawl timed out: partial result saved to", appCnf.ResultPath)
 		log.Error("crawl failed", logger.Error(err))
 		os.Exit(1)
 	}
 
-	if err := writeResult(appCnf.ResultPath, pages); err != nil {
-		log.Error("write result failed", logger.Error(err))
-		os.Exit(1)
-	}
+	fmt.Fprintf(os.Stderr, "result saved to %s\n", appCnf.ResultPath)
 }
 
 // writeResult stores the crawl result to a json file

@@ -66,6 +66,10 @@ func (cs *CrawlerService) StartCrawl(ctx context.Context, urls []string) ([]*ent
 		t.Root.Prune()
 		pages = append(pages, t.Root)
 	}
+
+	if err := ctx.Err(); err != nil {
+		return pages, err
+	}
 	return pages, nil
 }
 
@@ -74,12 +78,14 @@ func (cs *CrawlerService) appendTree(ctx context.Context, tree *entity.CallTree,
 	defer wg.Done()
 
 	if err := cs.dsp.Acquire(ctx); err != nil {
+		page.Fail()
 		return
 	}
 	defer cs.dsp.Release()
 
 	links, err := cs.observe(ctx, page)
 	if err != nil {
+		page.Fail()
 		return
 	}
 	if depth >= cs.cnf.Depth {

@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"golang.org/x/net/html"
+	"golang.org/x/net/html/charset"
 
 	"github.com/Reddetk/crawler-cli/cmd/logger"
 	secports "github.com/Reddetk/crawler-cli/internal/ports/secPorts"
@@ -43,9 +44,6 @@ func (o *HTTPObserver) Observe(ctx context.Context, url string) (*secports.Obser
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-
-		o.log.Warn("unexpected status", logger.String("url", url),
-			logger.Error(fmt.Errorf("status %d", resp.StatusCode)))
 		return nil, fmt.Errorf("unexpected status: %d", resp.StatusCode)
 	}
 
@@ -53,7 +51,12 @@ func (o *HTTPObserver) Observe(ctx context.Context, url string) (*secports.Obser
 		return nil, fmt.Errorf("non-html content-type: %q", ct)
 	}
 
-	return parseHTML(resp.Body)
+	r, err := charset.NewReader(resp.Body, resp.Header.Get("Content-Type"))
+	if err != nil {
+		return nil, fmt.Errorf("charset: %w", err)
+	}
+
+	return parseHTML(r)
 }
 
 func parseHTML(r io.Reader) (*secports.ObserveResults, error) {
