@@ -13,11 +13,11 @@ const (
 )
 
 const (
-	defaultMaxWorkers       int           = 5
-	defaultAppTimeout       time.Duration = time.Minute * 2
-	defaultResultPath       string        = "resources/result.json"
-	defaultOutputPaths      string        = "resources/crawler.log"
-	defaultErrorOutputPaths string        = "resources/crawler.log"
+	DefaultMaxWorkers       int           = 5
+	DefaultAppTimeout       time.Duration = time.Minute * 2
+	DefaultResultPath       string        = "resources/result.json"
+	DefaultOutputPaths      string        = "resources/crawler.log"
+	DefaultErrorOutputPaths string        = "resources/crawler.log"
 )
 
 const (
@@ -47,8 +47,8 @@ type LoggerConfig struct {
 
 func InitDefaultAppConfig() *AppConfig {
 	return &AppConfig{
-		ResultPath: defaultResultPath,
-		AppTimeout: defaultAppTimeout,
+		ResultPath: DefaultResultPath,
+		AppTimeout: DefaultAppTimeout,
 		LogCnf:     initDefaultLoggerConfig(),
 	}
 }
@@ -63,8 +63,8 @@ func InitDefaultServiceConfig() *ServiceConfig {
 
 func initDefaultLoggerConfig() *LoggerConfig {
 	return &LoggerConfig{
-		OutputPaths:      []string{defaultOutputPaths},
-		ErrorOutputPaths: []string{defaultErrorOutputPaths},
+		OutputPaths:      []string{DefaultOutputPaths},
+		ErrorOutputPaths: []string{DefaultErrorOutputPaths},
 	}
 }
 
@@ -90,7 +90,7 @@ func getMaxWorkers() int {
 	plainmaxWorkers := os.Getenv(ENVNameMaxWorkers)
 	maxWorkers, err := strconv.Atoi(plainmaxWorkers)
 	if err != nil {
-		maxWorkers = defaultMaxWorkers
+		maxWorkers = DefaultMaxWorkers
 	}
 	return maxWorkers
 }
