@@ -25,13 +25,17 @@ func NewCrawlerService(
 	cnf *config.ServiceConfig,
 	webObserver secports.WebObserver,
 	log logger.Logger,
-) *CrawlerService {
+) (*CrawlerService, error) {
+	obsDisp, err := NewObserveDispatcher(cnf.AppEnvs.MaxWorkers)
+	if err != nil {
+		return nil, err
+	}
 	return &CrawlerService{
 		cnf:         cnf,
 		webObserver: webObserver,
-		dsp:         NewObserveDispatcher(cnf.AppEnvs.MaxWorkers),
+		dsp:         obsDisp,
 		log:         log,
-	}
+	}, nil
 }
 
 // StartCrawl expands one call tree per start URL in parallel

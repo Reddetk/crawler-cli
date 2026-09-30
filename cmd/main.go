@@ -18,8 +18,15 @@ func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
 	defer stop()
 
+	defAppCnf := config.InitDefaultAppConfig()
+	defSrvCnf, err := config.InitDefaultServiceConfig()
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(2)
+	}
+
 	cli := primadapter.NewCLI()
-	appCnf, srvCnf, warn := cli.ParseFlags(initConfigs())
+	appCnf, srvCnf, warn := cli.ParseFlags(defAppCnf, defSrvCnf)
 	if warn != nil {
 		fmt.Fprintln(os.Stderr, warn)
 		os.Exit(2)
@@ -31,12 +38,12 @@ func main() {
 		os.Exit(1)
 	}
 
-	crawler := core.NewCrawlerService(srvCnf, secadapter.NewHTTPObserver(log), log)
+	crawler, err := core.NewCrawlerService(srvCnf, secadapter.NewHTTPObserver(log), log)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "crawler service init:", err)
+		os.Exit(1)
+	}
 	cli.Bind(crawler, appCnf, log)
 
 	os.Exit(cli.Run(ctx).ExitCode())
-}
-
-func initConfigs() (*config.AppConfig, *config.ServiceConfig) {
-	return config.InitDefaultAppConfig(), config.InitDefaultServiceConfig()
 }

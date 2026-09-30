@@ -103,7 +103,7 @@ func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) 
 
 	timeout := fs.Duration("timeout", cnf.AppTimeout, "overall timeout for the whole crawl run, e.g. 2m, 90s, 1h30m")
 	output := fs.String("output", cnf.ResultPath, "result output path")
-	logPath := fs.String("log", "", "additional logger output path")
+	logPath := fs.String("log", cnf.LogCnf.OutputPaths[0], "additional logger output path")
 	reqTimeout := fs.Duration("request-timeout", srvCnf.RequestTimeout, "timeout for a single HTTP request")
 	depth := fs.Int("depth", srvCnf.Depth, "maximum link-following depth from each start URL (0 = only the start URL itself)")
 	urlsStr := fs.String("urls", "", "comma-separated list of start URLs")
@@ -116,17 +116,23 @@ func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) 
 	srvCnf.RequestTimeout = *reqTimeout
 	srvCnf.Depth = *depth
 
-	if err := validatePath(*output); err != nil {
+	if err := ensureParentDir(*output); err != nil {
 		errs = append(errs, fmt.Errorf("output: %w", err))
 	} else {
 		cnf.ResultPath = *output
 	}
 
 	if *logPath != "" {
-		if err := validatePath(*logPath); err != nil {
-			errs = append(errs, fmt.Errorf("log: %w", err))
+		if *logPath != "stdout" && *logPath != "stderr" {
+			if err := ensureParentDir(*logPath); err != nil {
+				errs = append(errs, fmt.Errorf("log: %w", err))
+			} else {
+				cnf.LogCnf.OutputPaths = []string{*logPath}
+				cnf.LogCnf.ErrorOutputPaths = []string{"stderr"}
+			}
 		} else {
-			cnf.LogCnf.WithOutputPath(*logPath)
+			cnf.LogCnf.OutputPaths = []string{*logPath}
+			cnf.LogCnf.ErrorOutputPaths = []string{"stderr"}
 		}
 	}
 
@@ -147,12 +153,16 @@ func parseUrls(raw string) ([]string, error) {
 	return strings.Split(raw, ","), nil
 }
 
-func validatePath(path string) error {
-	dir := filepath.Dir(path)
-	info, err := os.Stat(dir)
-	if err != nil || !info.IsDir() {
-		return fmt.Errorf("output directory does not exist: %s", dir)
+func ensureParentDir(path string) error {
+	if strings.TrimSpace(path) == "" {
+		return fmt.Errorf("path is empty")
 	}
+
+	dir := filepath.Dir(path)
+	if err := os.MkdirAll(dir, 0o755); err != nil {
+		return fmt.Errorf("create directory %q: %w", dir, err)
+	}
+
 	return nil
 }
 
