@@ -2,9 +2,13 @@
 package config
 
 import (
+	"fmt"
 	"os"
 	"strconv"
+	"strings"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 const (
@@ -22,6 +26,11 @@ const (
 
 const (
 	ENVNameMaxWorkers = "MAXWORKERS"
+)
+
+const (
+	MinWorkers = 1
+	MaxWorkers = 10
 )
 
 type AppConfig struct {
@@ -53,12 +62,14 @@ func InitDefaultAppConfig() *AppConfig {
 	}
 }
 
-func InitDefaultServiceConfig() *ServiceConfig {
+func InitDefaultServiceConfig() (*ServiceConfig, error) {
+	godotenv.Load()
+	envs, err := parseEnv()
 	return &ServiceConfig{
-		AppEnvs:        parseEnv(),
+		AppEnvs:        envs,
 		RequestTimeout: DefaultRequepstTimeout,
 		Depth:          DefaultDepth,
-	}
+	}, err
 }
 
 func initDefaultLoggerConfig() *LoggerConfig {
@@ -80,17 +91,35 @@ func (lCnf *LoggerConfig) WithErrOutputPath(paths ...string) *LoggerConfig {
 	return lCnf
 }
 
-func parseEnv() envs {
+func parseEnv() (envs, error) {
+	maxWorkers, err := getMaxWorkers()
 	return envs{
-		MaxWorkers: getMaxWorkers(),
-	}
+		MaxWorkers: maxWorkers,
+	}, err
 }
 
-func getMaxWorkers() int {
-	plainmaxWorkers := os.Getenv(ENVNameMaxWorkers)
-	maxWorkers, err := strconv.Atoi(plainmaxWorkers)
-	if err != nil {
-		maxWorkers = DefaultMaxWorkers
+func getMaxWorkers() (int, error) {
+	raw := strings.TrimSpace(os.Getenv(ENVNameMaxWorkers))
+	if raw == "" {
+		return DefaultMaxWorkers, nil
 	}
-	return maxWorkers
+
+	n, err := strconv.Atoi(raw)
+	if err != nil {
+		return 0, fmt.Errorf("%s: %q is not an integer: %w",
+			ENVNameMaxWorkers, raw, err)
+	}
+
+	if err := ValidateMaxWorkers(n); err != nil {
+		return 0, fmt.Errorf("%s: %w", ENVNameMaxWorkers, err)
+	}
+
+	return n, nil
+}
+
+func ValidateMaxWorkers(n int) error {
+	if n < MinWorkers || n > MaxWorkers {
+		return fmt.Errorf("invalid MAXWORKERS: got %d, want %d..%d", n, MinWorkers, MaxWorkers)
+	}
+	return nil
 }

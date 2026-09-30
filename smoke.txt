@@ -1,0 +1,1517 @@
+[
+  {
+    "resource": "https://yandex.com/",
+    "title": "Yandex — fast Internet search",
+    "links": [
+      {
+        "resource": "https://yandex.com/games/?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+        "title": "Yandex Games — Free games online to suit every taste. No downloads required",
+        "links": [
+          {
+            "resource": "https://yandex.com/games/category/new",
+            "title": "New Games Online - Play For Free On Yandex Games",
+            "links": [
+              {
+                "resource": "https://yandex.com/games/ar/category/new",
+                "title": "الألعاب الجديد أونلاين - العب مجانًا على Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/az/category/new",
+                "title": "Yeni oyunlar Onlayn - Yandex Games üzərində Pulsuz Oynayın",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/fa/category/new",
+                "title": "بازی‌ها جدید آنلاین - به صورت رایگان در Yandex Games بازی کنید",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/he/category/new",
+                "title": "משחקים חדש אונליין - שחק בחינם ב-Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hi/category/new",
+                "title": "गेम्स नया ऑनलाइन - Yandes Games पर मुफ्त में खेलें",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hy/category/new",
+                "title": "Խաղեր Նոր Առցանց - Խաղացեք Անվճար Yandex Games-ում",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/id/category/new",
+                "title": "Baru game Online - Main Gratis di Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ja/category/new",
+                "title": "ゲーム 新登場オンライン- Yandex Gamesで無料プレイ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ka/category/new",
+                "title": "თამაშები ახალი ონლაინ - Yandex Games-ზე უფასოდ თამაშობთ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/sr/category/new",
+                "title": "Nov igra Online - Igrajte besplatno na Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/th/category/new",
+                "title": "เกม ใหม่ ออนไลน์ - เล่นฟรีบน Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tk/category/new",
+                "title": "Oýunlar Täze Onlaýn - Mugt Oýnaň Ýandeks Oýunlar",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/uk/category/new",
+                "title": "Ігри Нові Онлайн - Грайте Безкоштовно На Яндекс Игры",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/vi/category/new",
+                "title": "Trò chơi Mới Trực Tuyến - Chơi Miễn Phí Trên Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/zh/category/new",
+                "title": "游戏 新 在线 - 在 Yandex游戏 免费游戏",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/steal-an-egg-escape-animals-612036",
+                "title": "Steal an Egg - Escape Animals! - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/schoolboy-and-granny-the-multiverse-604767",
+                "title": "Schoolboy and Granny: The Multiverse - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/makeover-studio-586020",
+                "title": "Makeover Studio - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/cat-on-a-vacuum-home-cleaning-simulator-610053",
+                "title": "Cat on a Vacuum: Home Cleaning Simulator - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/asmr-tower-1-jump-592677",
+                "title": "ASMR Tower: +1 Jump! - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/needle-in-a-haystack-online-603002",
+                "title": "Needle in a Haystack! (Online) - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/obby-1-web-swing-611886",
+                "title": "Obby: +1 Web Swing - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/how-to-fish-591695",
+                "title": "How To Fish - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/bitva-keisov-612721",
+                "title": "Кекс батл - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ladybug-merge-unlock-100-unique-looks-608820",
+                "title": "Ladybug Merge: Unlock 100 Unique Looks! - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/collect-brainrots-on-a-skateboard-online-526136",
+                "title": "Collect Brainrots on a Skateboard Online - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/futbolnyi-referi-krasnaia-kartochka-613899",
+                "title": "Футбольный Рефери Красная Карточка - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/squishy-dumplings-asmr-unboxing-607115",
+                "title": "Squishy Dumplings - ASMR unboxing - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ragdoll-duel-sword-fight-605552",
+                "title": "Ragdoll Duel: Sword Fight - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/backpacraft-2-573373",
+                "title": "BackpaCraft 2 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/swing-wild-web-parkour-559285",
+                "title": "Swing Wild! Web Parkour - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/obby-dig-for-animals-606360",
+                "title": "Obby: Dig for Animals - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/supermarket-boss-store-simulator-503678",
+                "title": "Supermarket Boss: Store Simulator - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/destroy-pixels-memes-and-your-photos-586900",
+                "title": "Destroy Pixels, Memes, and Your Photos - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ragdoll-playground-596248",
+                "title": "Ragdoll Playground - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ukradi-iaitso-i-zverei-609858",
+                "title": "Укради Яйцо и Зверей - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/street-board-run-502060",
+                "title": "Street Board Run - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/aqua-rescue-501393",
+                "title": "Aqua Rescue - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/obby-1-for-mowing-grass-588415",
+                "title": "Obby: +1 for Mowing Grass - play online for free on Yandex Games",
+                "links": []
+              }
+            ]
+          },
+          {
+            "resource": "https://yandex.com/games/category/editors_choice",
+            "title": "Popular Games Online - Play For Free On Yandex Games",
+            "links": [
+              {
+                "resource": "https://yandex.com/games/ar/category/editors_choice",
+                "title": "الألعاب الأكثر شعبية أونلاين - العب مجانًا على Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hy/category/editors_choice",
+                "title": "Խաղեր Սիրված Առցանց - Խաղացեք Անվճար Yandex Games-ում",
+                "links": []
+              }
+            ]
+          },
+          {
+            "resource": "https://yandex.com/games/categories",
+            "title": "All Categories | Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/arcade",
+            "title": "Arcade Games Online 👾 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/casual",
+            "title": "Casual Games Online 😄 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/action",
+            "title": "Action Games Online 🔫 Play For Free On Yandex Games",
+            "links": [
+              {
+                "resource": "https://yandex.com/games/ar/category/action",
+                "title": "الألعاب الإجراء أونلاين 🔫 العب مجانًا على Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/az/category/action",
+                "title": "Oyunlar Döyüş Onlayn 🔫 Yandex Games üzərində Pulsuz Oynayın",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/fa/category/action",
+                "title": "بازی‌ها اقدام آنلاین 🔫 به صورت رایگان در Yandex Games بازی کنید",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/he/category/action",
+                "title": "משחקים פעולה אונליין 🔫 שחק בחינם ב-Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hi/category/action",
+                "title": "गेम्स कार्रवाई ऑनलाइन 🔫 Yandes Games पर मुफ्त में खेलें",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hy/category/action",
+                "title": "Խաղեր Մարտական Առցանց 🔫 Խաղացեք Անվճար Yandex Games-ում",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/id/category/action",
+                "title": "Aksi game Online 🔫 Main Gratis di Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ja/category/action",
+                "title": "ゲーム 演技はじめ！オンライン🔫 Yandex Gamesで無料プレイ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ka/category/action",
+                "title": "თამაშები მებრძოლები ონლაინ 🔫 Yandex Games-ზე უფასოდ თამაშობთ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/sr/category/action",
+                "title": "Akcija igra Online 🔫 Igrajte besplatno na Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/th/category/action",
+                "title": "เกม การกระทำ ออนไลน์ 🔫 เล่นฟรีบน Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tk/category/action",
+                "title": "Hereket oýunlar Onlaýn 🔫 Mugt Oýnaň Ýandeks Oýunlar",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/uk/category/action",
+                "title": "Ігри Бойовики Онлайн 🔫 Грайте Безкоштовно На Яндекс Игры",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/vi/category/action",
+                "title": "Trò chơi Hành động Trực Tuyến 🔫 Chơi Miễn Phí Trên Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/zh/category/action",
+                "title": "游戏 开始！ 在线 🔫 在 Yandex游戏 免费游戏",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/shadow-fight-2-532160",
+                "title": "Shadow Fight 2 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/cs-lite-433369",
+                "title": "CS Lite - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/red-blue-leader-353989",
+                "title": "Red - Blue Leader - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/warfare-1942-377007",
+                "title": "Warfare 1942 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/battle-of-the-red-and-blue-agents-283309",
+                "title": "Battle of the red and blue agents - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/cs-1-362399",
+                "title": "CS 1 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ks-z-347444",
+                "title": "KS Z - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/counter-terror-global-strike-238724",
+                "title": "Counter-Terror: Global Strike - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/standout-strike-counter-attack-413457",
+                "title": "Standout Strike: Counter Attack - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ks-zone-online-456466",
+                "title": "KS Zone Online - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/gravity-mod-284790",
+                "title": "Gravity Mod - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/bodycam-shooter-355229",
+                "title": "Bodycam Shooter - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/aura-edit-arena-obby-553545",
+                "title": "Aura Edit Arena Obby - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ks-2-teams-264700",
+                "title": "KS 2 Teams - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/dta-6-285639",
+                "title": "DTA 6 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/hazmob-fps-411095",
+                "title": "Hazmob FPS - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/gamers-mod-448583",
+                "title": "Gamer's Mod - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/time-shooter-2-182594",
+                "title": "Time Shooter 2 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/madness-melee-346914",
+                "title": "Madness Melee - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/airport-clash-3d-98040",
+                "title": "Airport Clash 3D - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/cs-1-6-544971",
+                "title": "CS 1.6 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/481659",
+                "title": "УмножАрмия - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/gladiator-fights-335889",
+                "title": "Gladiator Fights - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/hypercam-shooter-404927",
+                "title": "Hypercam Shooter - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/1-weapon-evolution-online-537789",
+                "title": "+1 Weapon Evolution Online - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/sorcery-fight-anime-arena-563509",
+                "title": "Sorcery Fight: Anime Arena - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/zombotron-re-boot-290564",
+                "title": "Zombotron Re-Boot - play online for free on Yandex Games",
+                "links": []
+              }
+            ]
+          },
+          {
+            "resource": "https://yandex.com/games/category/for_boys",
+            "title": "Games For boys Online 🎮 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/simulator",
+            "title": "Simulators Games Online 🏙️ Play For Free On Yandex Games",
+            "links": [
+              {
+                "resource": "https://yandex.com/games/tag/free_60",
+                "title": "Free Games Online 🆓 Play For Free On Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tag/browser_67",
+                "title": "Browser Games Online ⏱️ Play For Free On Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tag/no_download_58",
+                "title": "No download Games Online 🎮 Play For Free On Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tag/mobile_334",
+                "title": "Mobile Games Online 📱 Play For Free On Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tag/no_registration_57",
+                "title": "No registration Games Online 🎮 Play For Free On Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ar/category/simulator",
+                "title": "الألعاب المحاكيات أونلاين 🏙️ العب مجانًا على Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/az/category/simulator",
+                "title": "Simulyator oyunlar Onlayn 🏙️ Yandex Games üzərində Pulsuz Oynayın",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/fa/category/simulator",
+                "title": "بازی‌ها شبیه‌سازها آنلاین 🏙️ به صورت رایگان در Yandex Games بازی کنید",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/he/category/simulator",
+                "title": "משחקים סימולטורים אונליין 🏙️ שחק בחינם ב-Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hi/category/simulator",
+                "title": "गेम्स सिमूलेटर्स ऑनलाइन 🏙️ Yandes Games पर मुफ्त में खेलें",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hy/category/simulator",
+                "title": "Խաղեր Սիմուլյատորներ Առցանց 🏙️ Խաղացեք Անվճար Yandex Games-ում",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/id/category/simulator",
+                "title": "Simulator game Online 🏙️ Main Gratis di Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ja/category/simulator",
+                "title": "ゲーム シミュレーターオンライン🏙️ Yandex Gamesで無料プレイ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ka/category/simulator",
+                "title": "თამაშები სიმულატორები ონლაინ 🏙️ Yandex Games-ზე უფასოდ თამაშობთ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/sr/category/simulator",
+                "title": "Simulatori igra Online 🏙️ Igrajte besplatno na Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tk/category/simulator",
+                "title": "Oýunlar Simeleýatorlar Onlaýn 🏙️ Mugt Oýnaň Ýandeks Oýunlar",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/uk/category/simulator",
+                "title": "Ігри Симулятори Онлайн 🏙️ Грайте Безкоштовно На Яндекс Игры",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/vi/category/simulator",
+                "title": "Trò chơi Trò mô phỏng Trực Tuyến 🏙️ Chơi Miễn Phí Trên Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/zh/category/simulator",
+                "title": "游戏 模拟器 在线 🏙️ 在 Yandex游戏 免费游戏",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/nsr-street-car-racing-449371?utm_source=game_promo_catalog\u0026yclid=13718237424629055487",
+                "title": "NSR Street Car Racing - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/melon-sandbox-260481",
+                "title": "Melon Sandbox - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/moscow-bus-driver-287241",
+                "title": "Moscow Bus Driver - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/parkour-online-436884",
+                "title": "Parkour Online - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/asphalt-racing-429373",
+                "title": "Asphalt Racing - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/475634",
+                "title": "Duck Playground 3D - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/farmland-205827",
+                "title": "FarmLand - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/mine-online-448223",
+                "title": "Mine - Online - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/acr-city-drift-racing-444444",
+                "title": "ACR: City Drift Racing - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/russian-driver-vaz-2108-513363",
+                "title": "Russian Driver VAZ 2108 - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/subway-230935",
+                "title": "Subway - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/noob-parkour-in-prison-203902",
+                "title": "Noob: Parkour in prison - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/motorcycle-racer-road-mayhem-234483",
+                "title": "Motorcycle Racer: Road Mayhem - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/animal-hospital-playground-558006",
+                "title": "Animal Hospital Playground - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/autobahn-m5-drift-295738",
+                "title": "Autobahn: M5 Drift - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/animal-hospital-3d-sandbox-605743",
+                "title": "Animal Hospital 3D Sandbox - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/my-resale-cases-and-sales-543033",
+                "title": "My Resale. Cases and sales - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/case-simulator-cars-509015",
+                "title": "Case Simulator: Cars - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/bus-simulator-evo-513832",
+                "title": "Bus Simulator : EVO - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/extreme-motorcycle-crashes-555086",
+                "title": "Extreme Motorcycle Crashes - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/moscow-tram-simulator-3d-360814",
+                "title": "Moscow Tram Simulator 3D - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/people-playground-578851",
+                "title": "People Playground - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/moscow-metro-driver-3d-277382",
+                "title": "Moscow Metro Driver 3D - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/car-crash-test-380760",
+                "title": "Car Crash Test - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/karmannaia-ekosistema-532283",
+                "title": "Карманная экосистема - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/turbo-weave-534419",
+                "title": "Turbo Weave - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/simuliator-nozhei-kliker-545970",
+                "title": "Симулятор Ножей Кликер - play online for free on Yandex Games",
+                "links": []
+              }
+            ]
+          },
+          {
+            "resource": "https://yandex.com/games/category/horrors",
+            "title": "Horror Games Online 👻 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/puzzles",
+            "title": "Puzzles Games Online 🧩 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/balloons",
+            "title": "Bubble shooters Games Online 💭 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/tabletop",
+            "title": "Board Games Online ♟️ Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/for_two_persons",
+            "title": "Two players Games Online 👯 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/midcore",
+            "title": "Midcore Games Online ⚖️ Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/sports",
+            "title": "Sports Games Online ⚽ Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/for_girls",
+            "title": "Games For girls Online 💄 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/race",
+            "title": "Racing Games Online 🏎️ Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/novels",
+            "title": "Novels Games Online 📖 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/match3",
+            "title": "Games Match 3 Online 🧩 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/cards",
+            "title": "Card Games Online 🃏 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/kids",
+            "title": "Games For kids Online 👧 Play For Free On Yandex Games",
+            "links": [
+              {
+                "resource": "https://yandex.com/games/ar/category/kids",
+                "title": "الألعاب للأطفال أونلاين 👧 العب مجانًا على Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/az/category/kids",
+                "title": "Oyunlar Uşaqlar üçün Onlayn 👧 Yandex Games üzərində Pulsuz Oynayın",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/fa/category/kids",
+                "title": "بازی‌ها مخصوص کودکان آنلاین 👧 به صورت رایگان در Yandex Games بازی کنید",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/he/category/kids",
+                "title": "משחקים לילדים אונליין 👧 שחק בחינם ב-Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hi/category/kids",
+                "title": "गेम्स बच्चों के लिए ऑनलाइन 👧 Yandes Games पर मुफ्त में खेलें",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hy/category/kids",
+                "title": "Խաղեր Մանկական Առցանց 👧 Խաղացեք Անվճար Yandex Games-ում",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/id/category/kids",
+                "title": "Game Untuk anak-anak Online 👧 Main Gratis di Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ja/category/kids",
+                "title": "ゲーム キッズ向けオンライン👧 Yandex Gamesで無料プレイ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ka/category/kids",
+                "title": "თამაშები ბავშვებისთვის ონლაინ 👧 Yandex Games-ზე უფასოდ თამაშობთ",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/sr/category/kids",
+                "title": "Za decu igra Online 👧 Igrajte besplatno na Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/th/category/kids",
+                "title": "เกม สำหรับเด็ก ออนไลน์ 👧 เล่นฟรีบน Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tk/category/kids",
+                "title": "Oýunlar Çagalar Onlaýn 👧 Mugt Oýnaň Ýandeks Oýunlar",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/uk/category/kids",
+                "title": "Ігри Дитячі Онлайн 👧 Грайте Безкоштовно На Яндекс Игры",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/vi/category/kids",
+                "title": "Trò chơi Cho trẻ em Trực Tuyến 👧 Chơi Miễn Phí Trên Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/zh/category/kids",
+                "title": "儿童游戏 在线 👧 在 Yandex游戏 免费游戏",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/motorcycle-keyboard-1-speed-600397",
+                "title": "Motorcycle Keyboard: +1 Speed - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/salon-krasoty-stan-superzvezdoi-539133",
+                "title": "Салон Красоты: Стань Суперзвездой - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/475340",
+                "title": "Pit Parkour - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/leave-2-escape-from-prison-445635",
+                "title": "Leave 2: Escape from prison - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/draw-the-mines-youtubers-415102",
+                "title": "Draw the Mine's youtubers! - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/asmr-drawing-game-282540",
+                "title": "ASMR Drawing game - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/cut-the-rope-time-travel-503258",
+                "title": "Cut the Rope: Time Travel - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/design-and-characters-329680",
+                "title": "Toca Life: Autumn - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/toca-world-creativity-and-design-339274",
+                "title": "Toca World: Big City - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/idle-train-566275",
+                "title": "Idle Train - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/skate-1-speed-530112",
+                "title": "SKATE +1 Speed - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/toca-life-dress-up-and-home-design-340680",
+                "title": "Toca Life: Dress Up and Home Design - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/toca-boca-everything-unlocked-335526",
+                "title": "Toca Boca Everything Unlocked - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/my-sprunki-incredibox-pet-create-your-own-morph-438232",
+                "title": "My Sprunki Incredibox Pet: Create Your Own Morph! - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/parkour-doors-538528",
+                "title": "Parkour Doors - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/squishy-dumplings-asmr-sandbox-578212",
+                "title": "Squishy Dumplings: ASMR Sandbox - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/toca-avatar-dress-up-world-511720",
+                "title": "Toca Avatar: Dress Up World - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/pizza-maker-cooking-games-for-kids-236565",
+                "title": "Pizza Maker - Cooking Games For Kids - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/tb-world-364679",
+                "title": "TB World - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/snake-snake-400418",
+                "title": "Snake snake - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/mystery-dumplings-unboxing-589927",
+                "title": "Mystery Dumplings Unboxing - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/tosa-boca-latest-version-302466",
+                "title": "Тоса Boca Latest Version - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/cute-snake-io-153846",
+                "title": "Cute Snake io - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/make-fries-327529",
+                "title": "Make Fries - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/klippini-raspakui-breinrota-528053",
+                "title": "Клиппини Распакуй Брейнрота - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/coloring-by-numbers-bloggers-fnaf-brawl-544635",
+                "title": "Coloring by numbers: Bloggers, Fnaf, Brawl - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/kpop-demon-hunters-gashapon-toys-537412",
+                "title": "KPop Demon Hunters - Gashapon Toys - play online for free on Yandex Games",
+                "links": []
+              }
+            ]
+          },
+          {
+            "resource": "https://yandex.com/games/category/adventure",
+            "title": "Adventure Games Online 🗺 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/strategy",
+            "title": "Strategy Games Online 🧠 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/quiz",
+            "title": "Quiz Games Online ❓ Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/economic",
+            "title": "Economy Games Online 🏭 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/games_io",
+            "title": ".io Games Online: Play For Free On Yandex Games — play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/role",
+            "title": "RPG Games Online 🦸 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/educational",
+            "title": "Educational Games Online 📚 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/category/for_babies",
+            "title": "Games For babies Online 👶 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tags",
+            "title": "All Tags | Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tag/attention_182",
+            "title": "Attention Games Online 👀 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tag/brain_training_101",
+            "title": "Brain training Games Online 🧠 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tag/hidden_treasures_857",
+            "title": "Games hidden treasures\n Online 🎥 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tag/logic_148",
+            "title": "Logic Games Online 🧠 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tag/russian_185",
+            "title": "Russian Games Online 🇷🇺 Play For Free On Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/ar?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — ألعاب مجانية عبر الإنترنت تناسب كل الأذواق. التنزيلات غير مطلوبة",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/az?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — Hər zövqə uyğun quraşdırmasız və pulsuz onlayn oyunlar",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/fa?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — بازی‌های رایگان به‌صورت آنلاین برای هر سلیقه. بدون نیاز به دانلود",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/he?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — משחקים מקוונים בחינם המתאימים לכל טעם. אין צורך בהורדות.",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/hi?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandes Games — हर एक की पसंद के मुताबिक फ़्री ऑनलाइन गेम्स. डाउनलोड करने की ज़रूरत नहीं",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/hy?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — Անվճար առցանց խաղեր առանց տեղադրման՝ ցանկացած ճաշակի համար",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/id?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — Game online gratis untuk semua selera. Tak perlu mengunduh",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/ja?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — どんな人でも好きなゲームを見つけられる無料オンラインゲーム。ダウンロード不要です",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/ka?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games — უფასო ონლაინ თამაშები ყველა გემოვნებისთვის. ჩამოტვირთვა არ არის საჭირო.",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/sr?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games – Besplatne igre na mreži za svaki ukus. Nije potrebno preuzimanje.",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/th?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games – เกมฟรีออนไลน์ที่ตรงกับทุกรสนิยม ไม่ต้องดาวน์โหลด",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/tk?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Ýandeks Oýunlar - Onlaýn oýunlar, isleýän zadymyzda, tölegsiz we programmalary ýüklemezsiz",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/uk?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Яндекс Игры — Ігри онлайн безкоштовно і без установлення на будь-який смак",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/vi?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex Games – Các trò chơi trực tuyến miễn phí phù hợp với mọi sở thích. Không cần tải xuống",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/zh?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Yandex游戏 – 适合各种口味的免费在线游戏。无需下载。",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/all-games",
+            "title": "All Games | Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/support/games/en/troubleshooting.html",
+            "title": "Solutions to common problems | Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/melon-sandbox-260481?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Melon Sandbox - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/new-bubble-shooter-277241?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "New Bubble Shooter - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/noob-parkour-in-prison-203902?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Noob: Parkour in prison - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/chess-with-a-computer-203195?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Chess with a computer - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/granny-original-259805?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Granny Original - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/obby-easy-parkour-240398?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Obby: Easy Parkour - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/designville-merge-and-design-281150?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "DesignVille: Merge \u0026 Design - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/basket-random-197304?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Basket Random - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/bubble-hit-96751?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Bubble Hit - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/battle-of-the-red-and-blue-agents-283309?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Battle of the red and blue agents - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/pirate-treasures-241733?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Pirate Treasures - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/fireboy-and-watergirl-3-in-the-ice-temple-96911?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Fireboy and Watergirl 3 In the Ice Temple - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/fireboy-and-watergirl-1-in-the-forest-temple-96860?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Fireboy \u0026 Watergirl 1 in The Forest Temple - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/durak-classic-174460?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Durak classic - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/tall-guy-run-282138?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Tall Guy Run - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/steal-an-egg-online-pets-and-brainrots-595303?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Steal an Egg Online - Pets and Brainrots - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/obby-skate-for-brainrots-604655?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Obby: Skate For Brainrots - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/steal-an-egg-escape-animals-612036?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Steal an Egg - Escape Animals! - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/bitva-keisov-612721?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Кекс батл - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/schoolboy-and-granny-the-multiverse-604767?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Schoolboy and Granny: The Multiverse - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/makeover-studio-586020?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Makeover Studio - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/needle-in-a-haystack-online-603002?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Needle in a Haystack! (Online) - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/how-to-fish-591695?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "How To Fish - play online for free on Yandex Games",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/app/placebox-mods-544102?utm_source=yandex\u0026utm_medium=com\u0026utm_campaign=morda",
+            "title": "Placebox Mods - play online for free on Yandex Games",
+            "links": []
+          }
+        ]
+      },
+      {
+        "resource": "https://yandex.com/all",
+        "title": "All Yandex services",
+        "links": [
+          {
+            "resource": "https://yandex.com",
+            "title": "Yandex — fast Internet search",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/games/",
+            "title": "Yandex Games — Free games online to suit every taste. No downloads required",
+            "links": [
+              {
+                "resource": "https://yandex.com/games/ar",
+                "title": "Yandex Games — ألعاب مجانية عبر الإنترنت تناسب كل الأذواق. التنزيلات غير مطلوبة",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/az",
+                "title": "Yandex Games — Hər zövqə uyğun quraşdırmasız və pulsuz onlayn oyunlar",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/fa",
+                "title": "Yandex Games — بازی‌های رایگان به‌صورت آنلاین برای هر سلیقه. بدون نیاز به دانلود",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/he",
+                "title": "Yandex Games — משחקים מקוונים בחינם המתאימים לכל טעם. אין צורך בהורדות.",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hi",
+                "title": "Yandes Games — हर एक की पसंद के मुताबिक फ़्री ऑनलाइन गेम्स. डाउनलोड करने की ज़रूरत नहीं",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/hy",
+                "title": "Yandex Games — Անվճար առցանց խաղեր առանց տեղադրման՝ ցանկացած ճաշակի համար",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/id",
+                "title": "Yandex Games — Game online gratis untuk semua selera. Tak perlu mengunduh",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ja",
+                "title": "Yandex Games — どんな人でも好きなゲームを見つけられる無料オンラインゲーム。ダウンロード不要です",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/ka",
+                "title": "Yandex Games — უფასო ონლაინ თამაშები ყველა გემოვნებისთვის. ჩამოტვირთვა არ არის საჭირო.",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/sr",
+                "title": "Yandex Games – Besplatne igre na mreži za svaki ukus. Nije potrebno preuzimanje.",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/th",
+                "title": "Yandex Games – เกมฟรีออนไลน์ที่ตรงกับทุกรสนิยม ไม่ต้องดาวน์โหลด",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/tk",
+                "title": "Ýandeks Oýunlar - Onlaýn oýunlar, isleýän zadymyzda, tölegsiz we programmalary ýüklemezsiz",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/uk",
+                "title": "Яндекс Игры — Ігри онлайн безкоштовно і без установлення на будь-який смак",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/vi",
+                "title": "Yandex Games – Các trò chơi trực tuyến miễn phí phù hợp với mọi sở thích. Không cần tải xuống",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/zh",
+                "title": "Yandex游戏 – 适合各种口味的免费在线游戏。无需下载。",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/battle-arena-heroes-adventure-184531",
+                "title": "Battle Arena: Heroes Adventure - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/dark-lands-355610",
+                "title": "Dark Lands - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/blood-of-titans-104362",
+                "title": "Blood of Titans - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/mansion-tale-merge-secrets-296216",
+                "title": "Mansion Tale: Merge Secrets - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/steam-city-245094",
+                "title": "Steam City - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/piece-of-cake-354517",
+                "title": "Piece of Cake - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/designville-merge-and-design-281150",
+                "title": "DesignVille: Merge \u0026 Design - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/global-city-189688",
+                "title": "Global City - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/fairyland-merge-and-magic-193645",
+                "title": "Fairyland Merge \u0026 Magic - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/empire-city-271135",
+                "title": "Empire City - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/braveland-heroes-195600",
+                "title": "Braveland Heroes - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/mergest-kingdom-171361",
+                "title": "Mergest Kingdom - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/ludus-376147",
+                "title": "Ludus - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/castle-craft-335914",
+                "title": "Castle Craft - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/three-sevens-slot-machines-196898",
+                "title": "777 слоты - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/steal-an-egg-online-pets-and-brainrots-595303",
+                "title": "Steal an Egg Online - Pets and Brainrots - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/click-the-button-608680",
+                "title": "Click the Button - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/mine-merge-shovels-609222",
+                "title": "Mine: Merge Shovels - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/yarn-art-loop-598167",
+                "title": "Yarn Art Loop - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/obby-on-the-car-1-to-keyboard-speed-564933",
+                "title": "Obby on the car: +1 to Keyboard Speed - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/pleasant-mahjong-mama-612244",
+                "title": "Pleasant Mahjong Mama - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/blue-ball-rescue-plan-605276",
+                "title": "Blue Ball: Rescue Plan - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/goblins-shop-battlers-602493",
+                "title": "Goblin's Shop Battlers - play online for free on Yandex Games",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/games/app/obby-skate-for-brainrots-604655",
+                "title": "Obby: Skate For Brainrots - play online for free on Yandex Games",
+                "links": []
+              }
+            ]
+          },
+          {
+            "resource": "https://yandex.com/support/",
+            "title": "Яндекс Справка",
+            "links": []
+          },
+          {
+            "resource": "https://yandex.com/company/",
+            "title": "Yandex",
+            "links": [
+              {
+                "resource": "https://yandex.com/company",
+                "title": "Yandex",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/company/news",
+                "title": "Yandex — News",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/company/about",
+                "title": "Yandex — About",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/adv",
+                "title": "Advertising on Yandex — Yandex Advertising",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/legal/",
+                "title": "Яндекс Справка",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/company/rules/code",
+                "title": "Yandex — Code of Business Ethics \u0026 Conduct of the Yandex Group",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/company/procurement",
+                "title": "Yandex — Suppliers",
+                "links": []
+              },
+              {
+                "resource": "https://yandex.com/company/privacy",
+                "title": "Yandex — Our Commitment to Users' Privacy",
+                "links": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

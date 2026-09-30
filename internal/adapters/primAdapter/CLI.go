@@ -116,7 +116,7 @@ func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) 
 	srvCnf.RequestTimeout = *reqTimeout
 	srvCnf.Depth = *depth
 
-	if err := validatePath(*output); err != nil {
+	if err := ensureParentDir(*output); err != nil {
 		errs = append(errs, fmt.Errorf("output: %w", err))
 	} else {
 		cnf.ResultPath = *output
@@ -124,7 +124,7 @@ func (cli *CLI) ParseFlags(cnf *config.AppConfig, srvCnf *config.ServiceConfig) 
 
 	if *logPath != "" {
 		if *logPath != "stdout" && *logPath != "stderr" {
-			if err := validatePath(*logPath); err != nil {
+			if err := ensureParentDir(*logPath); err != nil {
 				errs = append(errs, fmt.Errorf("log: %w", err))
 			} else {
 				cnf.LogCnf.OutputPaths = []string{*logPath}
@@ -153,7 +153,7 @@ func parseUrls(raw string) ([]string, error) {
 	return strings.Split(raw, ","), nil
 }
 
-func validatePath(path string) error {
+func ensureParentDir(path string) error {
 	if strings.TrimSpace(path) == "" {
 		return fmt.Errorf("path is empty")
 	}

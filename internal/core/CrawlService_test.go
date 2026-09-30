@@ -70,11 +70,19 @@ func newService(t *testing.T, obs secports.WebObserver, depth, maxWorkers int) *
 	t.Helper()
 
 	t.Setenv("MAXWORKERS", strconv.Itoa(maxWorkers))
-	cnf := config.InitDefaultServiceConfig()
+	cnf, err := config.InitDefaultServiceConfig()
+	if err != nil {
+		t.Error(err)
+	}
 	cnf.Depth = depth
 	cnf.RequestTimeout = 5 * time.Second
 
-	return NewCrawlerService(cnf, obs, nopLogger{})
+	crwSrv, err := NewCrawlerService(cnf, obs, nopLogger{})
+	if err != nil {
+		t.Error(err)
+	}
+
+	return crwSrv
 }
 
 func countResources(pg *entity.Page, acc map[string]int) {
